@@ -51,6 +51,11 @@ abstract class Admiral::Command
     @error_io = !error.nil? ? error : !parent.nil? ? parent.@error_io : STDERR
   end
 
+  # before_run is always running, even if a command is found
+  def before_run
+    # default empty
+  end
+
   # The run command.
   abstract def run
 
